@@ -1,0 +1,45 @@
+label{
+    display: block;
+    text-align: left;
+}
+
+form{
+    width: 300px;
+    margin: 0 auto;
+}
+
+input{
+    display: block;
+    text-align: center;
+    margin: 10px auto;
+    width: 100%;
+}
+
+legend{
+    text-align: center;
+    margin: 30px auto;
+    font-size: 20px;
+}
+
+#check-box{
+    display: inline;
+    width: auto;
+}
+
+label[for = 'check-box']{
+    display: inline-block;
+}
+
+#wrapper{
+    background-color: blanchedalmond;
+    width: 500px;
+    margin: 0 auto;
+}
+
+#bottom-form{
+    display: none;
+}
+
+#action{
+    text-align: center;
+}

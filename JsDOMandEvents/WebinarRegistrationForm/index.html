@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="wrapper">
+        <legend><strong>Регистрация за уебинар</strong></legend>
+        <form action="get" id="personal-info">
+            <label for="names">Име и Фамилия</label>
+            <input type="text" id="names">
+            <label for="address">Адрес</label>
+            <input type="text" id="address">
+            <label for="city">Населено място</label>
+            <input type="text" id="city">
+            <label for="post-code">Пощенски код</label>
+            <input type="number" id="post-code">
+            <label for="mail">Email</label>
+            <input type="email" id="mail">
+            <label for="phone">Телефон</label>
+            <input type="tel" id="phone">
+            <label for="date">Дата на семинара</label>
+            <input type="date" id="date">
+            <input type="checkbox" id="check-box">
+            <label for="check-box">Желая фактура</label>
+        </form>
+        <div id="bottom-form">
+            <form action="get" id="firm">
+                <label for="organization">Фирма/Организация</label>
+                <input type="text" id="organization">
+                <label for="mol">МОЛ</label>
+                <input type="text" id="mol">
+                <label for="eik">ЕИК</label>
+                <input type="text" id="eik">
+                <label for="dds">ИН по ДДС</label>
+                <input type="text" id="dds">
+                <label for="firm-address">Адрес</label>
+                <input type="text" id="firm-address">
+            </form>
+        </div>
+        <form action="" id="action">
+            <button>Регистрирай се</button>
+            <button>Изчисти</button>
+        </form>
+    </div>
+    <script src="showHide.js"></script>
+</body>
+</html>
