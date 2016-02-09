@@ -15,7 +15,11 @@ var Point = (function(){
     function Point(x, y){
         this.x = x;
         this.y = y;
+
+        return this;
     }
+
+    Point.prototype.toString = function (){return 'Point(x:' + this.x + ', y:' + this.y + ')'};
 
     return Point;
 })();
@@ -25,6 +29,7 @@ var shapesModule = (function(){
         function Shape(color) {
 
             this.color = color;
+            return this;
         }
 
         Shape.prototype.toString = function(){return this.constructor.name + ', color: ' + this.color};
@@ -36,9 +41,16 @@ var shapesModule = (function(){
             Shape.call(this, color);
             this.center = centerPoint;
             this.radius = Number(radius);
+
+            return this;
         }
 
         Circle.extends(Shape);
+        Circle.prototype.toString = function (){
+          return Shape.prototype.toString.call(this) +
+                  ', radius = ' + this.radius +
+                  ', center: ' + this.center.toString();
+        };
 
         return Circle;
     })();
@@ -49,9 +61,17 @@ var shapesModule = (function(){
             this.width = Number(width);
             this.height = Number(heght);
             Shape.call(this, color);
+
+            return this;
         }
 
         Rectangle.extends(Shape);
+        Rectangle.prototype.toString = function (){
+            return Shape.prototype.toString.call(this) +
+                    ', Top lef corner: ' + this.topLeft +
+                    ', width: ' + this.width +
+                    ', height: ' + this.height;
+        };
 
         return Rectangle;
     })();
@@ -62,9 +82,17 @@ var shapesModule = (function(){
             this.b = pointB;
             this.c = pointC;
             Shape.call(this, color);
+
+            return this;
         }
 
         Triangle.extends(Shape);
+        Triangle.prototype.toString = function (){
+            return Shape.prototype.toString.call(this) + ' ' +
+                    'A: ' + this.a.toString() + ' ' +
+                    'B: ' + this.b.toString() + ' ' +
+                    'C: ' + this.c.toString();
+        };
 
         return Triangle;
     })();
@@ -74,9 +102,16 @@ var shapesModule = (function(){
             this.a = pointA;
             this.b = pointB;
             Shape.call(this, color);
+
+            return this;
         }
 
         Line.extends(Shape);
+        Line.prototype.toString = function (){
+            return Shape.prototype.toString.call(this) +
+                ', Start = ' + this.a +
+                ', End =  ' + this.b;
+        };
 
         return Line;
     })();
@@ -86,9 +121,16 @@ var shapesModule = (function(){
             this.a = pointA;
             this.b = pointB;
             Shape.call(this, color);
+
+            return this;
         }
 
         Segment.extends(Shape);
+        Segment.prototype.toString = function (){
+            return Shape.prototype.toString.call(this) +
+                ', A = ' + this.a +
+                ', B = ' + this.b;
+        };
 
         return Segment;
     })();
@@ -103,13 +145,13 @@ var shapesModule = (function(){
 })();
 
 var circle = new shapesModule.circle(new Point(3, 5), 12, 'ff0000'),
-    rectangle =  shapesModule.rectangle(new Point(10, 20), 20, 15, 'ffcc00'),
+    rectangle =  new shapesModule.rectangle(new Point(10, 20), 20, 15, 'ffcc00'),
     triangle = new shapesModule.triangle(new Point(3, 5), new Point(3, 15), new Point(15, 0), 'e6b800'),
     line = new shapesModule.line(new Point(5, 5), new Point(10, 5), '1a1400'),
     segment = new shapesModule.segment(new Point(5, 5), new Point(10, 5), '1a1400');
 
 console.log(circle.toString());
-console.log(rectangle);
+console.log(rectangle.toString());
 console.log(triangle.toString());
 console.log(line.toString());
 console.log(segment.toString());
