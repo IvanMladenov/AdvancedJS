@@ -28,7 +28,7 @@ function createSection(){
 
 
     section.className = className;
-    itemButton.className = className;
+    itemButton.id = 'item-button';
     itemName.className = className;
     itemButton.textContent = '+';
     itemName.placeholder = 'Add Item...';
@@ -42,9 +42,12 @@ function createSection(){
 }
 
 function createItem(){
-    
+
 }
 
-var btn = document.getElementById('new-section');
-btn.addEventListener('click', createSection);
+var sectionButton = document.getElementById('new-section'),
+    itemButton = document.getElementById('item-button');
+
+sectionButton.addEventListener('click', createSection);
+itemButton.addEventListener('click', createItem);
 

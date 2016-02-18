@@ -1,14 +1,14 @@
 function startsWith(key){
     var index = this.indexOf(key);
 
-    return index===0?true:false;
+    return index===0;
 }
 
 function endsWith(key){
     var index = this.lastIndexOf(key);
     var expected = this.length-key.length;
 
-    return index===expected?true:false;
+    return index===expected;
 }
 
 function left(count){
