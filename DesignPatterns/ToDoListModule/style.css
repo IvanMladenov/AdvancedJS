@@ -1,0 +1,29 @@
+#wrapper{
+    border: 1px solid black;
+    padding: 10px;
+    width: 600px;
+    margin: 0 auto;
+}
+
+h1{
+    margin: 0;
+    text-align: center;
+}
+
+h3{
+    margin: 5px;
+    text-align: right;
+}
+
+#container{
+    border: 1px solid black;
+    padding: 5px;
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+section{
+    border: 1px solid black;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
