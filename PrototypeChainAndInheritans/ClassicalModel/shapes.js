@@ -109,7 +109,7 @@ var circle = new shapesModule.circle(new Point(3, 5), 12, 'ff0000'),
     segment = new shapesModule.segment(new Point(5, 5), new Point(10, 5), '1a1400');
 
 console.log(circle.toString());
-console.log(rectangle);
+//console.log(rectangle);
 console.log(triangle.toString());
 console.log(line.toString());
 console.log(segment.toString());
