@@ -1,4 +1,4 @@
-define(['factory'], function(Factory){
+define(['item'], function(Item){
     return (function() {
         var idCounter = 1;
         function Section(title) {
@@ -32,7 +32,8 @@ define(['factory'], function(Factory){
             sectionButton.innerHTML = '+';
 
             sectionButton.addEventListener('click', function() {
-                var item = Factory.Item(sectionInput.value);
+
+                var item = new Item(sectionInput.value);
                 sectionItems.appendChild(item.addToDOM());
                 sectionInput.value = '';
             });

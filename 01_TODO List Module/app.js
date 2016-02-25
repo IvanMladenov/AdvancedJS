@@ -1,7 +1,6 @@
 (function () {
     require.config({
         paths: {
-            'factory' : 'factory',
             'container': 'models/container',
             'item': 'models/item',
             'section': 'models/section'
@@ -9,8 +8,8 @@
     })
 })();
 
-require(['factory'], function (Factory) {
+require(['container'], function (Container) {
 
-    var container = Factory.Container('Tuesday TODO List');
+    var container = new Container('Tuesday TODO List');
     container.addToDOM('#wrapper');
 });
